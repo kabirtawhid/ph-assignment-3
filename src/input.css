@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Poppins&display=swap");
 @tailwind base;
 @tailwind components;
-@tailiwnd utilities;
+@tailwind utilities;
+
+@layer components {
+  .logo {
+    @apply font-caption text-[35px] text-[#414040];
+  }
+
+  .btn {
+    @apply bg-[#B68C5A] font-poppins text-white font-semibold border-none rounded-lg;
+  }
+
+  .menu {
+    @apply flex items-center  text-[#707070] text-base font-poppins;
+  }
+}
