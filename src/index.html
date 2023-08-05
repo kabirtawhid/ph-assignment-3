@@ -8,13 +8,18 @@
   </head>
   <body class="xl:max-w-[1200px] mx-auto">
     <header>
-      <nav class="flex justify-between items-center mt-6 mx-5">
+      <nav
+        class="bg-white flex justify-between items-center lg:mx-5 lg:mt-6 relative max-lg:shadow max-lg:w-[100vw] px-3 py-4"
+      >
         <div class="flex gap-3 items-center">
-          <img src="./assets/logo.svg" alt="" />
+          <img class="max-lg:h-[35px]" src="./assets/logo.svg" alt="" />
           <h2 class="logo">Justice</h2>
         </div>
 
-        <ul class="flex gap-6 items-center">
+        <ul
+          class="flex gap-6 lg:items-center max-lg:flex-col max-lg:absolute top-[-400px] left-[30px] max-lg:z-[-5] transition-all duration-500"
+          id="menu-list"
+        >
           <li><a class="menu" href="">Home</a></li>
           <li>
             <a class="menu" href=""
@@ -36,12 +41,51 @@
               >Contact Us <img src="./assets/gt.svg" alt=""
             /></a>
           </li>
+          <button class="lg:hidden btn text-lg px-[15px] py-[10px]" type="">
+            Free Consultation
+          </button>
         </ul>
 
-        <button class="btn text-lg px-[29px] py-[18px]" type="">
+        <button class="max-lg:hidden btn text-lg px-[29px] py-[18px]" type="">
           Free Consultation
+        </button>
+
+        <button class="lg:hidden" id="menu-button" type="" onclick="menu();">
+          <img id="icon-open" src="./assets/menu-bar.svg" alt="" />
+          <img
+            id="icon-close"
+            class="hidden"
+            src="./assets/icon-close.svg"
+            alt=""
+          />
         </button>
       </nav>
     </header>
+
+    <script>
+      let menu = () => {
+        let menu_list = document.getElementById("menu-list").classList;
+        let icon_open = document.getElementById("icon-open").classList;
+        let icon_close = document.getElementById("icon-close").classList;
+
+        if (menu_list.contains("open")) {
+          menu_list.remove("open");
+          menu_list.remove("top-[100px]");
+          menu_list.add("top-[-400px]");
+          menu_list.add("opacity-0");
+          menu_list.remove("opacity-100");
+          icon_open.remove("hidden");
+          icon_close.add("hidden");
+        } else {
+          menu_list.add("open");
+          menu_list.add("top-[100px]");
+          menu_list.remove("top-[-400px]");
+          menu_list.remove("opacity-0");
+          menu_list.remove("opacity-100");
+          icon_open.add("hidden");
+          icon_close.remove("hidden");
+        }
+      };
+    </script>
   </body>
 </html>

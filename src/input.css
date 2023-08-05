@@ -5,7 +5,7 @@
 
 @layer components {
   .logo {
-    @apply font-caption text-[35px] text-[#414040];
+    @apply font-caption text-[30px] lg:text-[35px] text-[#414040];
   }
 
   .btn {
