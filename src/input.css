@@ -15,4 +15,8 @@
   .menu {
     @apply flex items-center  text-[#707070] text-base font-poppins;
   }
+
+  .normal-text {
+    @apply font-poppins text-base text-center text-[#707070];
+  }
 }
